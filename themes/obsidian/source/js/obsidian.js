@@ -849,7 +849,7 @@ var Obsidian = {
   }
 };
 
-$(function () {
+$(document).ready(function () {
   initialMathJax();
   var inputArea = document.querySelector("#local-search-input");
   if (inputArea) {
