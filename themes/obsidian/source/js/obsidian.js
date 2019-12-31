@@ -484,13 +484,14 @@ var Obsidian = {
     });
   },
   reactToWindowHeight: function () {
-    var postSpacing = 315;
+    var postSpacing = 230;
     var winHeight = $(window).height();
     var winWidth = $(window).width();
     var firstPostHeight = $('#post0').height();
     if (winWidth <= 900) {
-      postSpacing = 100;
+      postSpacing = 80;
     }
+    // console.log(firstPostHeight + postSpacing, winHeight);
     if (firstPostHeight + postSpacing > winHeight || winWidth <= 900) {
       $('#mark').css('height', firstPostHeight + postSpacing + 'px');
       $('#screen').css('height', firstPostHeight + postSpacing + 'px');
@@ -849,7 +850,7 @@ var Obsidian = {
   }
 };
 
-$(document).ready(function () {
+$(function () {
   initialMathJax();
   var inputArea = document.querySelector("#local-search-input");
   if (inputArea) {
@@ -862,7 +863,9 @@ $(document).ready(function () {
     };
   }
   if ($('#post0').length) {
-    Obsidian.reactToWindowHeight();
+    setTimeout(() => {
+      Obsidian.reactToWindowHeight();
+    }, 0)
   }
   if (Obsidian.P()) {
     $('body').addClass('touch');
