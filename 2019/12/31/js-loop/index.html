@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Js里的循环 - 绣Coding</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="javascript里数组循环
+重要提示: 对于es6新增的for of，里面可以使用 async/ await,其它几种循环均无法做到。
+
+for ：自定义循环
+
+for循环，根据数组的lengt,"> 
+    <meta name="author" content="Lusun"> 
+    <link rel="alternative" href="atom.xml" title="绣Coding" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">绣Coding</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/logo.png" alt="" data-url="http://localhost:4000">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Js里的循环</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="sub-switchmenu iconfont icon-menu"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/JS"><b>「
+                    </b>JS<b> 」</b></a>
+                
+                十二月 31, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/12/31/js-loop/" title="Js里的循环" class="">Js里的循环</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    4.3k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    4 mins.
+                </span>
+                
+                
+                <span id="/2019/12/31/js-loop/" class="leancloud_visitors" data-flag-title="Js里的循环">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span class="leancloud-visitors-count">1000000</span>
+                </span>
+                
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E5%BE%AA%E7%8E%AF/" rel="tag">循环</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="javascript里数组循环"><a href="#javascript里数组循环" class="headerlink" title="javascript里数组循环"></a>javascript里数组循环</h2><blockquote>
+<p>重要提示: 对于<code>es6</code>新增的<code>for of</code>，里面可以使用 <code>async/ await</code>,其它几种循环均无法做到。</p>
+</blockquote>
+<h3 id="for-：自定义循环"><a href="#for-：自定义循环" class="headerlink" title="for ：自定义循环"></a><code>for</code> ：自定义循环</h3><blockquote>
+<ul>
+<li>for循环，根据数组的length手动设置循环条件</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1,2,3,4,5];
+for (var i = 0; i &lt; array.length; i++) { 
+    console.log(i,array[i]);
+}
+/*output*/
+/*
+  0 1
+  1 2
+  2 3
+  3 4
+  4 5
+*/</code></pre>
+<h3 id="for-in-：循环索引"><a href="#for-in-：循环索引" class="headerlink" title="for in ：循环索引"></a><code>for in</code> ：循环索引</h3><blockquote>
+<ul>
+<li><code>for in</code> 算是最常用的循环方式</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1,2,3,4,5];
+for(let i in array) { 
+   console.log(i,array[i]); 
+};
+/*output*/
+/*
+  0 1
+  1 2
+  2 3
+  3 4
+  4 5
+*/</code></pre>
+<h3 id="forEach-：循环索引及值"><a href="#forEach-：循环索引及值" class="headerlink" title="forEach ：循环索引及值"></a><code>forEach</code> ：循环索引及值</h3><blockquote>
+<ul>
+<li><code>array.forEach</code> 的用法： <code>array.forEach(function(currentValue, index, arr), thisValue)</code></li>
+<li>其中 <code>thisValue</code> 为回调函数里的 <code>this</code> 指向</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1,2,3,4,5];
+array.forEach((item,index,arr)=&gt;{
+  console.log(index,item)
+})
+/*output*/
+/*
+  0 1
+  1 2
+  2 3
+  3 4
+  4 5
+*/</code></pre>
+<h3 id="for-of-：循环值"><a href="#for-of-：循环值" class="headerlink" title="for of ：循环值"></a><code>for of</code> ：循环值</h3><blockquote>
+<ul>
+<li>for of循环为 <code>es6</code> 的新增循环方法，如下代码，注意输出结果对比和 <code>for in</code> 的不同</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1,2,3,4,5];
+for(let i of array){
+  console.log(i)
+}
+/*output其中i直接输出的是数组的值,而不是数组下标*/
+/*
+  1
+  2
+  3
+  4
+  5
+*/</code></pre>
+<h3 id="array-map-：循环时，依次修改数组"><a href="#array-map-：循环时，依次修改数组" class="headerlink" title="array.map ：循环时，依次修改数组"></a><code>array.map</code> ：循环时，依次修改数组</h3><blockquote>
+<ul>
+<li><code>array.map</code> 的用法： <code>array.map(function(item, index, arr), thisValue)</code> , 可以看出和array.forEach非常相似，但不同的是array.forEach只是个循环，没有返回值，而array.map在循环的时候需要指定返回值，也就是说修改在循环的过程中修改array里本次循环的 <code>value</code> 值，看下面实例，估计能更好懂一些</li>
+<li>简单来说， <code>array.map</code> 方法可以修改一个数组每一项的值，并 <code>返回一个新数组</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1, 4, 9, 16];
+
+// pass a function to map
+const map = array.map(function(item){return item*2});
+
+console.log(map);
+// output: [2, 8, 18, 32]</code></pre>
+<h3 id="array-filter-：循环时，过滤出自己需要的值"><a href="#array-filter-：循环时，过滤出自己需要的值" class="headerlink" title="array.filter ：循环时，过滤出自己需要的值"></a><code>array.filter</code> ：循环时，过滤出自己需要的值</h3><blockquote>
+<ul>
+<li>array.filter的用法： <code>array.filter(function(item, index, arr), thisValue)</code> ,其用法和 <code>forEach</code> &amp; <code>map</code> 一样，但其作用是在循环的过程中过滤掉出数组中我们需要的数据，并 <code>返回过滤后的新数组</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">var array = [1,4,9,16];
+const filter = array.filter(function(item,index,arr){
+  return item&gt;=9; // 如果item大于或等于9，则返回true
+})
+
+console.log(filter);
+// output: [9,16] 得到数组里大于或等于9的新数组</code></pre>
+<h3 id="小结Tips"><a href="#小结Tips" class="headerlink" title="小结Tips"></a><code>小结Tips</code></h3><p>对于js中需要掌握的循环基本就上面5种，当然还有一些其他的，但确实不常用</p>
+<p>主要还是要区别下各自的使用场景：其中 <code>forEach</code> 、 <code>map</code> 、 <code>filter</code> ,这三个是 <code>用法一样，但功能不一样</code></p>
+<p>而 <code>forEach</code> 和 <code>for in</code> ，两个都是 <code>用法不一样，但功能一样</code> ,但即便功能一样，也有不同点，如下说明：</p>
+<blockquote>
+<ol>
+<li>首先 <code>for in</code> 的循环顺序是依赖于环境的，所以它循环一个数组，不一定是按照顺序依次循环，而 <code>forEach</code> 可以避免这个问题</li>
+<li>还有一个就是循环里包含异步执行问题，请看下面代码，注意输出结果上的区别</li>
+</ol>
+</blockquote>
+<pre><code class="javascript">let arr = [1,2,3,4,5]
+for(var i in arr){
+  setTimeout(()=&gt;{console.log(`delay-i:${i}`)},0)
+}
+/*output 如下结果会发现输出的都是4，这并不是我们想要的，当然这个问题也可以使用es6的let来解决，将for里的var改成let即可*/
+/*
+  delay-i:4
+  delay-i:4
+  delay-i:4
+  delay-i:4
+  delay-i:4
+*/
+
+arr.forEach(function(item,index,arr){
+  setTimeout(()=&gt;{console.log(`delay-index:${index}`)},0)
+})
+/*output*/
+/*
+  delay-index:0
+  delay-index:1
+  delay-index:2
+  delay-index:3
+  delay-index:4
+*/</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/WeAreGoodChildren.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+            <div id="vcomments"></div>
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/logo_me.jpg" height=300 width=300></img>
+                    <p>Lusun</p>
+                    <span>link-me: chobits4@sina.com</span>
+                    <dl>
+                        <dd><a href="https://github.com/chobits4/hexo-preety-dark" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://weibo.com/2004642000" target="_blank"><span
+                                    class=" iconfont icon-weibo"></span></a></dd>
+                        <dd><a href="tencent://message/?uin=604867574&Site=&Menu=yes" target="_blank"><span
+                                    class=" iconfont icon-QQ"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">2 <p>文章</p></a></li>
+                    <li><a href="/categories">3 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript里数组循环"><span class="toc-number">1.</span> <span class="toc-text">javascript里数组循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-：自定义循环"><span class="toc-number">1.1.</span> <span class="toc-text">for ：自定义循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in-：循环索引"><span class="toc-number">1.2.</span> <span class="toc-text">for in ：循环索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach-：循环索引及值"><span class="toc-number">1.3.</span> <span class="toc-text">forEach ：循环索引及值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-of-：循环值"><span class="toc-number">1.4.</span> <span class="toc-text">for of ：循环值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-map-：循环时，依次修改数组"><span class="toc-number">1.5.</span> <span class="toc-text">array.map ：循环时，依次修改数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-filter-：循环时，过滤出自己需要的值"><span class="toc-number">1.6.</span> <span class="toc-text">array.filter ：循环时，过滤出自己需要的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结Tips"><span class="toc-number">1.7.</span> <span class="toc-text">小结Tips</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="sub-sidebar">
+            
+            
+            
+            <div class="sub-animate box sticky animated fadeOutRight faster">
+                <div id="sub-toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript里数组循环"><span class="toc-number">1.</span> <span class="toc-text">javascript里数组循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-：自定义循环"><span class="toc-number">1.1.</span> <span class="toc-text">for ：自定义循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in-：循环索引"><span class="toc-number">1.2.</span> <span class="toc-text">for in ：循环索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach-：循环索引及值"><span class="toc-number">1.3.</span> <span class="toc-text">forEach ：循环索引及值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-of-：循环值"><span class="toc-number">1.4.</span> <span class="toc-text">for of ：循环值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-map-：循环时，依次修改数组"><span class="toc-number">1.5.</span> <span class="toc-text">array.map ：循环时，依次修改数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-filter-：循环时，过滤出自己需要的值"><span class="toc-number">1.6.</span> <span class="toc-text">array.filter ：循环时，过滤出自己需要的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小结Tips"><span class="toc-number">1.7.</span> <span class="toc-text">小结Tips</span></a></li></ol></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            Lusun
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        <!-- Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small> -->
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["abandoning time person, time to abandon him.", "当你辜负时间的时候，时间也在辜负你。"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+    
+<script src="/js/Valine.min.js"></script>
+
+    <script>
+
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'zh-CN';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: '11Ioy2bsBdJPKVVRUt3ncR2S-gzGzoHsz',
+                appKey: 'M4s9PMftkOXEvFnz27Mtntki',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
+
+
+
+</html>

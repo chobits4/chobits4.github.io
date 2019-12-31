@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>javascript正则 - 绣Coding</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="TriDiamond Obsidian,"> 
+    <meta name="description" content="正则介绍
+
+js里正则，主要是针对字符串进行的操作处理
+js里正则有两种声明方式：通过RegExp和双斜杠//，如下
+
+
+/ab+c/i; // 方法一
+new RegExp(&amp;#39;ab+c&amp;#,"> 
+    <meta name="author" content="Lusun"> 
+    <link rel="alternative" href="atom.xml" title="绣Coding" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">绣Coding</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/logo.png" alt="" data-url="http://localhost:4000">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">javascript正则</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="sub-switchmenu iconfont icon-menu"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/JS"><b>「
+                    </b>JS<b> 」</b></a>
+                
+                十二月 28, 2019
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/2019/12/28/js-regexp/" title="javascript正则" class="">javascript正则</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    12k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    11 mins.
+                </span>
+                
+                
+                <span id="/2019/12/28/js-regexp/" class="leancloud_visitors" data-flag-title="javascript正则">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span class="leancloud-visitors-count">1000000</span>
+                </span>
+                
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/Javascript/" rel="tag">Javascript</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <h2 id="正则介绍"><a href="#正则介绍" class="headerlink" title="正则介绍"></a>正则介绍</h2><blockquote>
+<ul>
+<li>js里正则，主要是针对<code>字符串</code>进行的操作处理</li>
+<li>js里正则有两种声明方式：通过<code>RegExp</code>和双斜杠<code>//</code>，如下</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">/ab+c/i; // 方法一
+new RegExp(&#39;ab+c&#39;, &#39;i&#39;); // 方法二
+new RegExp(/ab+c/, &#39;i&#39;); // 方法三</code></pre>
+<h2 id="正则规则"><a href="#正则规则" class="headerlink" title="正则规则"></a>正则规则</h2><h3 id="正则里的-修饰符（写在-右边系统定义好的规则）"><a href="#正则里的-修饰符（写在-右边系统定义好的规则）" class="headerlink" title="正则里的 修饰符（写在//右边系统定义好的规则）"></a>正则里的 修饰符（写在//右边系统定义好的规则）</h3><blockquote>
+<ul>
+<li><code>i</code>： 忽略大小写</li>
+<li><code>g</code>：全局匹配;找到所有匹配，而不是在第一个匹配后停止</li>
+<li><code>m</code>：允许多行匹配，如<code>/^abc/</code>匹配字符串以abc开头（忽视单行字符串，还是多行字符串），<code>/^abc/m</code>则是匹配多行字符串，每行开头的<code>abc</code></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="正则里为中括号-：正则里的中括号表示-区间中的一位"><a href="#正则里为中括号-：正则里的中括号表示-区间中的一位" class="headerlink" title="正则里为中括号[]：正则里的中括号表示 区间中的一位"></a>正则里为<code>中括号[]</code>：正则里的中括号表示 <code>区间中的一位</code></h3><blockquote>
+<ul>
+<li><code>/[2367][abcd]/</code>：<code>第一位</code>表示<code>2367之中</code>的某个数，<code>第二位</code>表示<code>abcd之中</code>的某个值；</li>
+<li><code>/[0-9][0-9A-z]/</code>：<code>第一位</code>表示0到9<code>区间中</code>的某个数，<code>第二位</code>表示数字或字母<code>区间中</code>的某个值</li>
+<li><code>/[^abdf][^1678]/</code>：<code>第一位</code>表示<code>非a或非b或非d或非f之中</code>的某个值，<code>第二位</code>表示<code>非1或非67或非7或非8之中</code>的某个值</li>
+<li>（<code>注意</code>这里<code>/[^a]/</code>和<code>/^a/</code>的区别：中括号<code>里面的^a</code>表示<code>非a</code>，但中括号<code>外面的^</code>则是表示<code>以a开头</code>）</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="正则中的小括号-表示子表达式-（备注：大括号｛｝在正则里是表示量词，具体查看量词）"><a href="#正则中的小括号-表示子表达式-（备注：大括号｛｝在正则里是表示量词，具体查看量词）" class="headerlink" title="正则中的小括号()表示子表达式,（备注：大括号｛｝在正则里是表示量词，具体查看量词）"></a>正则中的<code>小括号()</code>表示<code>子表达式</code>,（备注：大括号｛｝在正则里是表示量词，具体查看量词）</h3><blockquote>
+<ul>
+<li><code>/(jpg|png|gif|jpeg)/</code>：表示匹配<code>jpg</code>或<code>png</code>或<code>gif</code>或<code>jpeg</code>中的一个</li>
+<li><code>子表达式</code>真正厉害的作用，请查看下方正则的<code>复制</code></li>
+<li>除了<code>复制</code>之外，小括号在正则里还可以<code>群组匹配</code>，见下方  </li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="正则中的元字符（写在-中系统定义好的规则）-和-一样表示区间中的一位"><a href="#正则中的元字符（写在-中系统定义好的规则）-和-一样表示区间中的一位" class="headerlink" title="正则中的元字符（写在//中系统定义好的规则）:和[]一样表示区间中的一位"></a>正则中的<code>元字符</code>（写在<code>//</code>中系统定义好的规则）:和<code>[]</code>一样表示<code>区间中的一位</code></h3><blockquote>
+<ul>
+<li><code>/\w/</code>：<code>\w</code>其实就是系统定义好的<code>区间符</code>和<code>[0-9A-z_]</code>作用一模一样表示<code>0到9</code>及<code>所有字母</code>以及<code>一个下划线</code>之中的某一个值</li>
+<li><code>/\d/</code>：即<code>[0-9]</code>，代表数字</li>
+<li><code>/\s/</code>：空格字符，即<code>[\n\f\r\t\v]</code>匹配字符串中的这些空格符中的一个，如字符串<code>‘hello\nworld’</code>中的<code>\n</code></li>
+<li><code>/\b/</code>：匹配单词边界，如字符串<code>&#39;hello wolrd&#39;</code>中<code>字母w</code>左边便有<code>单词边界</code></li>
+<li><code>/\W/</code>或<code>/\D/</code>：<code>\W</code>即<code>[^\w]</code>；<code>\D</code>即<code>[^\d]</code>也就是<code>非数字</code>，大写均表示<code>非小写功能</code></li>
+<li><code>/./</code>：正则里的<code>.</code>是个特殊<code>元字符</code>，表示出了<code>[\r\n]</code>之外的<code>所有字符中的一个</code></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="正则中的量词"><a href="#正则中的量词" class="headerlink" title="正则中的量词"></a>正则中的<code>量词</code></h3><blockquote>
+<ul>
+<li><code>+</code>：<code>1到多个</code>的量词，如<code>/a+/</code>,表示匹配<code>1到多个a</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abaaacccaa&#39;
+let reg = /a+/g
+console.log(str.match(reg)) // [&quot;a&quot;, &quot;aaa&quot;, &quot;aa&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>*</code>：<code>0到多个</code>的量词，如<code>/a*/</code>,表示匹配<code>0到多个a</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abcabcaabccccaa&#39;
+let reg = /abc*/g
+console.log(str.match(reg)) // [&quot;abc&quot;, &quot;abc&quot;, &quot;abcccc&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>?</code>：<code>0到一个</code>的量词，如<code>/a?/</code>,表示匹配<code>0到一个a</code>(注意<code>？</code>是个很特殊的<code>量词</code>，在有些情况下，它不作量词用，如<code>？</code>用在<code>量词后面</code>则表示进行<code>非贪婪匹配</code>,可以查看后面的<code>正则贪婪模式</code>介绍，再如下面的<code>修饰匹配</code>)</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abaaacccaa&#39;
+let reg = /a?/g
+console.log(str.match(reg)) // [&quot;a&quot;, &quot;&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;a&quot;, &quot;a&quot;, &quot;&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>{n}</code>：<code>n个</code>的量词，如<code>/a{2}/</code>，表示匹配<code>2个a</code>，其作用等同于<code>/aa/</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abaaacccaa&#39;
+let reg = /a{2}/g
+console.log(str.match(reg)) // [&quot;aa&quot;, &quot;aa&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>{n,m}</code>：<code>n到m个</code>的量词，如<code>/a{2,4}/</code>，表示匹配<code>2到4个a</code>（注意，正则会优先匹配<code>4个a</code>，再匹配<code>3个a</code>，再匹配<code>2个a</code>）</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abaaaaacccaaaddaa&#39;
+let reg = /a{2,4}/g
+console.log(str.match(reg)) // [&quot;aaaa&quot;, &quot;aaa&quot;, &quot;aa&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>{n,}</code>：<code>至少n个</code>的量词（也是<code>n到多个</code>的量词），如<code>/a{1,}/</code>，就和<code>/a+/</code>的作用一样</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<ul>
+<li><code>^</code>：<code>以某某开头</code>的量词，如<code>/^abc/</code>, 表示以<code>abc</code>开头</li>
+<li>（<code>注意</code>这里<code>/[^a]/</code>和<code>/^a/</code>的区别：中括号<code>里面的^a</code>表示<code>非a</code>，但中括号<code>外面的^</code>则是表示<code>以a开头</code>）</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;amabaaaaacccaaaddaa&#39;
+let reg = /^aba/
+console.log(reg.test(str)) // false</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>$</code>：<code>以某某结尾</code>的量词，如<code>/abc$/</code>, 表示以<code>abc</code>结尾</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;amabaaaaacccaaaddaa&#39;
+let reg = /dda$/
+console.log(reg.test(str)) // false</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>(?=)</code>：<code>修饰匹配</code>的量词，如<code>/\w\w(?=c)/</code>，表示匹配<code>后面紧跟c</code>的两位值</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abcmdcttksfec&#39;
+let reg = /\w\w(?=c)/g
+console.log(str.match(reg)) // [&quot;ab&quot;, &quot;md&quot;, &quot;fe&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>(?&lt;=)</code>：<code>修饰匹配</code>的量词，如<code>/(?&lt;=c)\w\w/</code>，表示匹配<code>前面紧跟c</code>的两位值</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abcmdcttksfec&#39;
+let reg = /(?&lt;=c)\w\w/g
+console.log(str.match(reg)) // [&quot;md&quot;, &quot;tt&quot;]</code></pre>
+<hr>
+<blockquote>
+<ul>
+<li><code>(?!)</code>：<code>修饰匹配</code>的量词，如<code>/\w\w(?!c)/</code>，表示匹配后面<code>不紧跟c</code>的两位值</li>
+</ul>
+</blockquote>
+<pre><code class="javascript">let str = &#39;abcmdcttksfec&#39;
+let reg = /\w\w(?!c)/g
+console.log(str.match(reg)) // [&quot;bc&quot;, &quot;dc&quot;, &quot;tt&quot;, &quot;ks&quot;, &quot;ec&quot;]</code></pre>
+<hr>
+<h3 id="贪婪与非贪婪模式"><a href="#贪婪与非贪婪模式" class="headerlink" title="贪婪与非贪婪模式"></a><code>贪婪</code>与<code>非贪婪</code>模式</h3><blockquote>
+<p>1、贪婪模式：<code>正则的默认模式</code>：一般趋向于最大长度匹配。</p>
+<p>2、非贪婪模式：反之，取最小长度匹配</p>
+<p>3、如何区分：在<code>量词（* + ? {m,n}）后面</code>加上<code>?</code>号，就是<code>非贪婪模式</code></p>
+</blockquote>
+<pre><code class="javascript">const string = &#39;aabcaaabcccbabcabccab&#39;
+const regexp = /ab.*?cc/g
+const regexp2 = /ab.*cc/g
+console.log(string.match(regexp)) // [ &#39;abcaaabcc&#39;, &#39;abcabcc&#39; ]
+console.log(string.match(regexp2)) // [ &#39;abcaaabcccbabcabcc&#39; ]</code></pre>
+<hr>
+<h3 id="正则中的复制：使用-1或-2或-3-配合-来实现"><a href="#正则中的复制：使用-1或-2或-3-配合-来实现" class="headerlink" title="正则中的复制：使用\1或\2或\3...配合()来实现"></a>正则中的<code>复制</code>：使用<code>\1</code>或<code>\2</code>或<code>\3...</code>配合<code>()</code>来实现</h3><blockquote>
+<p><code>\1</code>会复制正则里，<code>第一</code>个<code>()</code>里面的值</p>
+<p><code>\2</code>会复制正则里，<code>第二</code>个<code>()</code>里面的值</p>
+<p><code>\3</code>会复制正则里，<code>第三</code>个<code>()</code>里面的值</p>
+<p>…等等,以此类推</p>
+</blockquote>
+<pre><code class="javascript">// 如要取出字符串&quot;abcdababcdcdcdjjaaaa&quot;中`XOXO`这种类型的值
+const string = &quot;abcdababcdcdcdjjaaaa&quot;
+const regexp = /(\w)(\w)\1\2/g
+
+console.log(string.match(regexp)) // [ &#39;abab&#39;, &#39;cdcd&#39;, &#39;aaaa&#39; ]</code></pre>
+<hr>
+<h3 id="可以使用正则的方法有哪些"><a href="#可以使用正则的方法有哪些" class="headerlink" title="可以使用正则的方法有哪些"></a>可以使用正则的方法有哪些</h3><blockquote>
+<pre><code class="javascript">let string = &#39;hello world!&#39;
+let regexp = /llo/g</code></pre>
+<ul>
+<li><code>regexp.test(string)</code>：返回布尔值，测试字符串<code>string</code>中是否有满足正则<code>regexp</code>的条件的字符串；</li>
+<li><code>regexp.exec(string)</code>：匹配正则里的值，并返回匹配时，所匹配的这个值的索引位置，也就是说<code>exec</code>可以<code>指出</code>正则在字符串的哪个<code>位置</code>匹配到了值。</li>
+</ul>
+</blockquote>
+<blockquote>
+<pre><code class="javascript">console.log(regexp.exec(string)) // [&quot;llo&quot;, index: 2, input: &quot;hello world!&quot;, groups: undefined],</code></pre>
+<ul>
+<li><code>string.match(regexp)</code>：返回匹配出的字符串<code>数组</code>；</li>
+<li><code>string.search(regexp)</code>：返回匹配到的字符串<code>位置（索引）</code>，没找到则返回<code>-1</code>；</li>
+<li><code>string.split(regexp)</code>：以匹配的正则的值为分割符，来将字符串<code>分割成数组</code></li>
+<li><code>string.replace(regexp, &#39;another string&#39;)</code>：以正则来查找字符串，并将找到的正则值，替换为指定的字符串<code>another string</code>，最后返回新的修改后的字符串（注意replace这个方法是返回一个新字符串，原字符串不会被修改）</li>
+</ul>
+<pre><code class="javascript">// string.replace()使用正则后，有两个特殊的地方
+// 1. #### 可以全局匹配
+console.log(string.replace(&#39;l&#39;,&#39;m&#39;)) // &#39;hemlo world!&#39;,可以看到，只会将第一个l替换成m
+regexp = /l/g
+console.log(string.replace(regexp,&#39;m&#39;)) // &#39;hemmo wormd!&#39;,可以看到，会将所有l都替换成了m,当然正则必须添加g修饰符
+// 2. #### 可以在第二个参数里获取到正则()里的匹配到的正则值，就和上面讲到正则里的复制里的\1或\2一样
+string = &#39;aabbwwyymmnn&#39; // 要求将所有的XXOO，替换成OOXX
+regexp = /(\w)\1(\w)\2/g
+console.log(string.replace(regexp,&#39;$2$2$1$1&#39;)) // bbaayywwnnmm
+// 或
+console.log(string.replace(regexp,($,$1,$2)=&gt; $2+$2+$1+$1)) // bbaayywwnnmm， 这种第二个参数是个回调函数的方式，更有实用价值一些， 回调函数里第一个形参$是`每次`正则匹配到的值，而第二个参数$1是正则里第一个子表达式(也就是正则里第一个小括号里)匹配到的值，第三个参数则是正则里第二个子表达式的匹配到的值。</code></pre>
+</blockquote>
+<h2 id="正则的使用实例"><a href="#正则的使用实例" class="headerlink" title="正则的使用实例"></a>正则的使用实例</h2><blockquote>
+<ul>
+<li>从字符串里：<code>首尾限定</code>来<code>选出需要的字符串</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">const mm = &#39;sfefaefhttps:www.chongly.com/sef/ff08fesfaef.jpg,asfeasi&#39;
+// 选出字符串里的图片
+const reg = /http.*?\.jpg/i
+const result = mm.match(reg)[0] // 打印出 https:www.chongly.com/sef/ff08fesfaef.jpg</code></pre>
+<blockquote>
+<ul>
+<li>将字符串里的中划线名字，改成小驼峰规则的名字，比如<code>font-size</code>替换成<code>fontSize</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">const string = &#39;font-size;margin-top&#39;
+const regexp = /-(\w)/g // 注意这里需要使用子表达式，便于在replace的第二个参数里获取匹配到的值
+console.log(string.replace(regexp, ($,$1) =&gt; $1.toUpperCase())) // 打印出 fontSize;marginTop</code></pre>
+<blockquote>
+<ul>
+<li>将字符串里小驼峰规则的名字，改成中划线名字，比如<code>fontSize</code>替换成<code>font-size</code></li>
+</ul>
+</blockquote>
+<pre><code class="javascript">const string = &#39;fontSize;marginTop&#39;
+const regexp = /[A-Z]/g
+console.log(string.replace(regexp, $ =&gt; &#39;-&#39; + $.toLowerCase())) // 打印出 font-size;margin-top</code></pre>
+<blockquote>
+<ol>
+<li>将<code>数字</code>进行<code>科学计数法</code>, 如<code>65236544115</code>转成<code>65,236,544,115</code></li>
+</ol>
+</blockquote>
+<pre><code class="javascript">// 方法一：复杂易懂篇
+const num = &#39;165236544115&#39;
+let str_reverse = num.split(&#39;&#39;).reverse().join(&#39;&#39;) // 将字符串颠倒
+const regexp = /(\d{3})(?!\b)/g // (?!\b)是防止最后一位后面也加上了,
+const num_out = str_reverse.replace(regexp,&#39;$1,&#39;)
+console.log(num_out.split(&#39;&#39;).reverse().join(&#39;&#39;)) // 将颠倒的字符串，再颠倒回来
+// 方法二：高端简洁篇
+const num2 = &#39;165236544115&#39;
+const regexp2 = /(?=(\B)(\d{3})+$)/g
+console.log(num2.replace(regexp2, &#39;,&#39;))</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/statics/WeAreGoodChildren.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+            <div id="vcomments"></div>
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/img/logo_me.jpg" height=300 width=300></img>
+                    <p>Lusun</p>
+                    <span>link-me: chobits4@sina.com</span>
+                    <dl>
+                        <dd><a href="https://github.com/chobits4/hexo-preety-dark" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="https://weibo.com/2004642000" target="_blank"><span
+                                    class=" iconfont icon-weibo"></span></a></dd>
+                        <dd><a href="tencent://message/?uin=604867574&Site=&Menu=yes" target="_blank"><span
+                                    class=" iconfont icon-QQ"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">2 <p>文章</p></a></li>
+                    <li><a href="/categories">3 <p>分类</p></a></li>
+                    <li><a href="/tags">3 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则介绍"><span class="toc-number">1.</span> <span class="toc-text">正则介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则规则"><span class="toc-number">2.</span> <span class="toc-text">正则规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则里的-修饰符（写在-右边系统定义好的规则）"><span class="toc-number">2.1.</span> <span class="toc-text">正则里的 修饰符（写在&#x2F;&#x2F;右边系统定义好的规则）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则里为中括号-：正则里的中括号表示-区间中的一位"><span class="toc-number">2.2.</span> <span class="toc-text">正则里为中括号[]：正则里的中括号表示 区间中的一位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的小括号-表示子表达式-（备注：大括号｛｝在正则里是表示量词，具体查看量词）"><span class="toc-number">2.3.</span> <span class="toc-text">正则中的小括号()表示子表达式,（备注：大括号｛｝在正则里是表示量词，具体查看量词）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的元字符（写在-中系统定义好的规则）-和-一样表示区间中的一位"><span class="toc-number">2.4.</span> <span class="toc-text">正则中的元字符（写在&#x2F;&#x2F;中系统定义好的规则）:和[]一样表示区间中的一位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的量词"><span class="toc-number">2.5.</span> <span class="toc-text">正则中的量词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪婪与非贪婪模式"><span class="toc-number">2.6.</span> <span class="toc-text">贪婪与非贪婪模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的复制：使用-1或-2或-3-配合-来实现"><span class="toc-number">2.7.</span> <span class="toc-text">正则中的复制：使用\1或\2或\3...配合()来实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以使用正则的方法有哪些"><span class="toc-number">2.8.</span> <span class="toc-text">可以使用正则的方法有哪些</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则的使用实例"><span class="toc-number">3.</span> <span class="toc-text">正则的使用实例</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="sub-sidebar">
+            
+            
+            
+            <div class="sub-animate box sticky animated fadeOutRight faster">
+                <div id="sub-toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#正则介绍"><span class="toc-number">1.</span> <span class="toc-text">正则介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则规则"><span class="toc-number">2.</span> <span class="toc-text">正则规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则里的-修饰符（写在-右边系统定义好的规则）"><span class="toc-number">2.1.</span> <span class="toc-text">正则里的 修饰符（写在&#x2F;&#x2F;右边系统定义好的规则）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则里为中括号-：正则里的中括号表示-区间中的一位"><span class="toc-number">2.2.</span> <span class="toc-text">正则里为中括号[]：正则里的中括号表示 区间中的一位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的小括号-表示子表达式-（备注：大括号｛｝在正则里是表示量词，具体查看量词）"><span class="toc-number">2.3.</span> <span class="toc-text">正则中的小括号()表示子表达式,（备注：大括号｛｝在正则里是表示量词，具体查看量词）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的元字符（写在-中系统定义好的规则）-和-一样表示区间中的一位"><span class="toc-number">2.4.</span> <span class="toc-text">正则中的元字符（写在&#x2F;&#x2F;中系统定义好的规则）:和[]一样表示区间中的一位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的量词"><span class="toc-number">2.5.</span> <span class="toc-text">正则中的量词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#贪婪与非贪婪模式"><span class="toc-number">2.6.</span> <span class="toc-text">贪婪与非贪婪模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则中的复制：使用-1或-2或-3-配合-来实现"><span class="toc-number">2.7.</span> <span class="toc-text">正则中的复制：使用\1或\2或\3...配合()来实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可以使用正则的方法有哪些"><span class="toc-number">2.8.</span> <span class="toc-text">可以使用正则的方法有哪些</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则的使用实例"><span class="toc-number">3.</span> <span class="toc-text">正则的使用实例</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2019
+        <span class="gradient-text">
+            Lusun
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        <!-- Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small> -->
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/obsidian.js"></script>
+<script src="/js/jquery.truncate.js"></script>
+<script src="/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["abandoning time person, time to abandon him.", "当你辜负时间的时候，时间也在辜负你。"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+    
+<script src="/js/Valine.min.js"></script>
+
+    <script>
+
+        var valine = new Valine();
+
+        function initValine(path) {
+            if (!path) path = window.location.pathname;
+            let language = 'zh-CN';
+            if (!language) {
+                language = 'en';
+            } else {
+                language = language.toLowerCase();
+            }
+            valine.init({
+                el: '#vcomments',
+                appId: '11Ioy2bsBdJPKVVRUt3ncR2S-gzGzoHsz',
+                appKey: 'M4s9PMftkOXEvFnz27Mtntki',
+                notify: 'false',
+                verify: 'false',
+                avatar: 'mp',
+                placeholder: 'Leave your throughs behind~',
+                visitor: 'true',
+                path: path,
+                lang: language
+            });
+        }
+
+        $(document).ready(function () {
+            initValine();
+        });
+    </script>
+
+
+
+</html>
