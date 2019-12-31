@@ -3595,13 +3595,10 @@ pre .keyword {
     left: 80px;
   }
   .icon-pause {
-    left: 50px;
+    left: 170px;
   }
   .icon-home {
     left: 15px;
-  }
-  .icon-play {
-    display: none;
   }
   .comment.link {
     width: 140px;
