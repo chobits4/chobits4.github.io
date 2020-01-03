@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://localhost:4000
+url: https://chobits4.gitee.io/
 root: /
 permalink: :title.html
 permalink_defaults:
