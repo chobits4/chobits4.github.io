@@ -1,6 +1,6 @@
 ---
 title: javascript正则
-preview: 300
+preview: 100
 date: 2019-12-28 14:42:27
 categories:
     - JS

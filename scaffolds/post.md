@@ -2,5 +2,5 @@
 title: {{ title }}
 date: {{ date }}
 tags:
-preview: 300
+preview: 100
 ---

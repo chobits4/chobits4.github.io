@@ -6,7 +6,7 @@ categories:
 tags:
     - Javascript
     - 循环
-preview: 300
+preview: 100
 ---
 ## javascript里数组循环
  
