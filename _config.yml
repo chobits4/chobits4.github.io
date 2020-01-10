@@ -5,7 +5,8 @@
 # Site
 title: 绣Coding
 subtitle: '一针一线，绣代码！'
-description: '代码学习'
+description: ''
+keywords:
 author: Lusun
 language: zh-CN
 timezone: 'Asia/Shanghai'
