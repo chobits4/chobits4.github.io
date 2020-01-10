@@ -1972,6 +1972,8 @@ h1.title {
   box-shadow: 0 0 30px rgba(16,14,23,0.25);
   padding: 1rem;
   background: #fff;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 .article .sidebar .box .subbox dl dd {
   display: block;
@@ -2103,6 +2105,8 @@ h1.title {
   box-shadow: 0 0 30px rgba(16,14,23,0.25);
   padding: 1rem;
   background: #363756;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 .article .sub-sidebar .box .subbox h4 {
   color: #09bceb;
