@@ -37,7 +37,7 @@ tags:
 
 ### 美缝之家
 
-![美缝之家-小程序码](https://pic.hjjfood.com/picgo/20201103160215.png)
+![美缝之家-小程序](https://pic.hjjfood.com/picgo/20201103171451.png) 
 
 - 功能介绍
 
