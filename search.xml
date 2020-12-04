@@ -33,6 +33,39 @@
     
     
     <entry>
+      <title>欢欢-2019-2020项目介绍</title>
+      <link href="/huanhuan-project.html"/>
+      <url>/huanhuan-project.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="小程序项目"><a href="#小程序项目" class="headerlink" title="小程序项目"></a>小程序项目</h2><h3 id="花解解美食"><a href="#花解解美食" class="headerlink" title="花解解美食"></a>花解解美食</h3><img src="https://pic.hjjfood.com/picgo/20201103154854.png" alt="花解解美食-小程序码" style="width:400px;" /><ul><li>技术特色：<code>es6</code> 、<code>Flex布局</code>、<code>websocket通知监听</code>、<code>Echarts</code>，<code>云打印</code></li><li>功能介绍：</li></ul><blockquote><ul><li>一个精美的美食类<code>分享</code>+<code>点餐</code>的应用服务</li><li>该产品功能：<code>短视频</code>分享美食、快捷<code>点餐</code>、随餐<code>聊天室</code>、商家<code>订单</code>管理、打印机<code>自动打票</code></li></ul></blockquote><ul><li>技术栈分享</li></ul><blockquote><ul><li>前端使用微信小程序原生代码开发</li><li>后端使用<code>egg(restapi服务)</code>+阿里云集群</li><li>聊天室：使用<code>websocket</code>技术，实时即时的聊天</li><li>自动打印：使用<code>易联云</code>云打印机，实时监听打印状态，已经订单状态</li></ul></blockquote><ul><li>市场情况</li></ul><blockquote><ul><li>目前产品文档，在服务器的商家目前有12家</li><li>MAU&gt;20w</li></ul></blockquote><h3 id="美缝之家"><a href="#美缝之家" class="headerlink" title="美缝之家"></a>美缝之家</h3><img src="https://pic.hjjfood.com/picgo/20201103171451.png" alt="美缝之家-小程序" style="width:400px;"/> <img src="http://pic.hjjfood.com/picgo/20201204233831.png" style="width:400px;" /><ul><li>技术特色：<code>Vue</code>、<code>Vuex</code>、<code>less</code>、<code>uni-app</code>、<code>server-less</code>、<code>canvas海报</code></li><li>功能介绍</li></ul><blockquote><ul><li>一个全面的<code>美缝行业下单-接单平台</code></li><li>该产品功能：美缝行业<code>资源整合</code>，<code>在线工具</code>，美缝<code>下单</code>，美缝师<code>接单</code>，美缝师<code>海报式名片</code>，行业内品牌介绍及<code>资讯</code></li></ul></blockquote><ul><li>技术分享</li></ul><blockquote><ul><li>前端使用<code>uin-app</code>技术栈，该应用有微信小程序，百度小程序，H5，以及安卓APP</li><li>后端使用<code>server-less</code>云服务器</li></ul></blockquote><ul><li>市场情况</li></ul><blockquote><ul><li>目前应该是美缝行业运营的最好的一款互联网产品之一</li><li>DAU &gt; 3w</li></ul></blockquote><h2 id="APP项目"><a href="#APP项目" class="headerlink" title="APP项目"></a>APP项目</h2><h3 id="宠礼团购商城"><a href="#宠礼团购商城" class="headerlink" title="宠礼团购商城"></a>宠礼团购商城</h3><p><img src="https://pic.hjjfood.com/picgo/20201103161352.png" alt="宠礼团购-APP"></p><ul><li>技术特色：<code>TypeScript</code>、<code>React</code>、<code>React-Native</code>、<code>Hook</code>、<code>Ant Design Mobile</code></li><li>功能介绍</li></ul><blockquote><ul><li>一个建材团购APP商城</li><li>该产品功能：建材商品<code>团购</code>、<code>秒杀</code>、<code>定金</code>，商家和用户<code>聊天室</code>沟通，<code>购物</code>，<code>订单管理及推送</code>等等</li></ul></blockquote><ul><li>技术分享</li></ul><blockquote><ul><li>前端使用<code>React-Native（IOS）</code> + <code>Java(android)</code> 开发</li><li>聊天室，推送，使用<code>融云IM</code>集成开发</li><li>后台使用<code>egg+阿里云SLB</code>，部署ssl+ipv6</li></ul></blockquote><ul><li>市场情况</li></ul><blockquote><ul><li>目前该APP还在刚开始推广落地工作</li></ul></blockquote><h2 id="中后台-中台系统：Vue-Element-Admin"><a href="#中后台-中台系统：Vue-Element-Admin" class="headerlink" title="中后台/中台系统：Vue-Element-Admin"></a>中后台/中台系统：Vue-Element-Admin</h2><p><img src="http://pic.hjjfood.com/picgo/20201204234743.png" alt=""></p><ul><li>技术特色：<code>Vue</code>、<code>element-ui</code>、<code>G2/G6</code>、<code>SaSS</code></li><li>技术分享</li></ul><blockquote><ul><li>中后台系统，并且带Bi图标数据分析</li><li>使用Element-Admin框架，搭配阿里的图标工具G2显示统计数据</li></ul></blockquote><h2 id="PC综合站"><a href="#PC综合站" class="headerlink" title="PC综合站"></a>PC综合站</h2><h3 id="SSR渲染自框架站点"><a href="#SSR渲染自框架站点" class="headerlink" title="SSR渲染自框架站点"></a>SSR渲染自框架站点</h3><p><img src="https://pic.hjjfood.com/picgo/20201103163422.png" alt="SSR网站"></p><ul><li>技术分享</li></ul><blockquote><ul><li>自框架站点</li><li>采用：Nuxt(vue的SSR渲染) + ORM + mysql + 网易云推送服务器等等</li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> miniprogram </category>
+          
+          <category> app </category>
+          
+          <category> restfulapi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node </tag>
+            
+            <tag> react </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lusun-2019项目介绍</title>
       <link href="/my-project.html"/>
       <url>/my-project.html</url>
